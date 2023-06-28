@@ -5,33 +5,38 @@ import './Card.css';
 
 const Card = (props) => {
 
-    const onClickLikeButton () => {
-        console.log('Like Button working')
-        props.onClickCallback(props.id);
+    const onLikeCard = () => {
+        console.log('Card like toggle working');
+        props.likeCard(props.cardID);
     };
 
-    const deleteCard = () => {
-        console.log('Card deleted properly')
-        props.deleteCardCallback(props.id);
+    const onDeleteCard = () => {
+        console.log('Card deleted properly');
+        props.deleteCardCallback(props.cardID);
     };
 
     return (
         <section>
             <p>{props.message}</p>
             <div>
-                <button onClick={() => props.onHeartClick(props.id)}>{props.liked ? '❤️' : '🤍'}</button>
-                <button onClick={deleteCard}>'Delete Card'</button>
+                <button onClick={onLikeCard}>
+                    {props.likeCard ? '❤️' : '🤍'}
+                </button>
+                {/* <p>{likeCount}</p> */}
+                <button onClick={onDeleteCard}>
+                    Delete Card
+                </button>
             </div>
         </section>
     )
 };
 
 Card.propTypes = {
-    id: PropTypes.number.isRequired,
+    cardID: PropTypes.number.isRequired,
     message: PropTypes.string.isRequired,
-    onClickCallback: PropTypes.func,
-    liked: PropTypes.bool.isRequired,
-    deleteCardCallback: PropTypes.func
+    likeCard: PropTypes.func.isRequired,
+    // likeCount: PropTypes.number.isRequired,
+    deleteCard: PropTypes.func.isRequired
 };
 
 export default Card;
