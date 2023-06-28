@@ -20,5 +20,6 @@ Board.propTypes = {
     title: PropTypes.string.isRequired,
     owner: PropTypes.string.isRequired
 };
+// Need to add a delete function in here!
 
 export default Board;
