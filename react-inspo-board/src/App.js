@@ -12,7 +12,7 @@ function App() {
         <h2>Board Description!</h2>
       </header>
       <main>
-        <BoardList Cardlist={CardList} />
+        <BoardList />
       </main>
     </div>
   );
