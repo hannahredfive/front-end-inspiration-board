@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CardList from './components/TaskList.js';
+import CardList from './components/CardList.js';
 import BoardList from './components/BoardList.js';
 import './App.css';
 import axios, {isCancel, AxiosError} from 'axios';
