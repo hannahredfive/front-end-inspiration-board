@@ -8,11 +8,11 @@ function App() {
   return (
     <div>
       <header>
-
+        <h1>Inspo Board</h1>
+        <h2>Board Description!</h2>
       </header>
       <main>
-        <BoardList />
-        <CardList />
+        <BoardList Cardlist={CardList} />
       </main>
     </div>
   );
