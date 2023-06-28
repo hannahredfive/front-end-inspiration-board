@@ -1,21 +1,58 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Board from './Board';
 import NewBoardForm from './NewBoardForm';
 import './BoardList.css';
-import CardList from './CardList';
 
 const BoardList = (props) => {
-    return (
-        <section>
-            <Board />
-            <NewBoardForm />
-        </section>
-    )
+  const boards = props.boards;
+  const getBoardListJSX = (boards) => {
+    return boards.map((board) => {
+      return (
+        <button 
+          id={board.id} 
+          name='board'
+          onClick={props.changeCurrentBoard(board.id)}
+        >
+          {board.title}
+        </button>
+      )
+    });
+  };
+
+  // ~ THIS CODE WOULD BE BETTER IN APP.JS ~
+  // const currentBoard = boards.forEach(board => {
+  //   if (board.id === props.currentBoardId) {
+  //     return board;
+  //   }
+  // });
+
+  return (
+    <section>
+      <span
+        className="board__list bookmark__button">
+          <button 
+            id='new__board__toggle'
+            onClick={props.newBoardFormToggle}
+          >
+            New Board +
+          </button>
+          {getBoardListJSX(boards)}
+      </span>
+      <NewBoardForm className='visble' />
+    </section>
+  )
 };
 
 BoardList.propTypes = {
-
+  boards: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      owner: PropTypes.string.isRequired
+    })
+  ).isRequired,
+  changeCurrentBoard: PropTypes.func,
+  newBoardFormToggle: PropTypes.func,
 };
 
 export default BoardList;
