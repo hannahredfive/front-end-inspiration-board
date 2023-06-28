@@ -10,11 +10,6 @@ const Card = (props) => {
         props.onClickCallback(props.id);
     };
 
-    const deleteCard = () => {
-        console.log('Card deleted properly')
-        props.deleteCardCallback(props.id);
-    };
-
     return (
         <section>
             <p>'blah!'</p>
