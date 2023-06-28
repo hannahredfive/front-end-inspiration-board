@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import Board from './Board';
 import NewBoardForm from './NewBoardForm';
 import './BoardList.css';
+import CardList from './CardList';
 
 const BoardList = (props) => {
     return (
         <section>
-            <Board />
+            <Board CardList={CardList}/>
             <NewBoardForm />
         </section>
     )
