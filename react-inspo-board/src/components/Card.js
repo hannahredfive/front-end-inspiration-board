@@ -17,7 +17,11 @@ const Card = (props) => {
 
     return (
         <section>
-            <p>'blah!'</p>
+            <p>{props.message}</p>
+            <div>
+                <button onClick={() => props.onHeartClick(props.id)}>{props.liked ? '❤️' : '🤍'}</button>
+                <button onClick={deleteCard}>'Delete Card'</button>
+            </div>
         </section>
     )
 };
