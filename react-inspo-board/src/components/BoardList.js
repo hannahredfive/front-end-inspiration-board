@@ -8,7 +8,7 @@ import CardList from './CardList';
 const BoardList = (props) => {
     return (
         <section>
-            <Board CardList={CardList}/>
+            <Board />
             <NewBoardForm />
         </section>
     )
