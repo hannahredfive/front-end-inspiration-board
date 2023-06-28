@@ -26,4 +26,12 @@ const Card = (props) => {
     )
 };
 
+Card.propTypes = {
+    id: PropTypes.number.isRequired,
+    message: PropTypes.string.isRequired,
+    onClickCallback: PropTypes.func,
+    liked: PropTypes.bool.isRequired,
+    deleteCardCallback: PropTypes.func
+};
+
 export default Card;
