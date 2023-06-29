@@ -77,6 +77,18 @@ function App() {
       .catch((error) => console.log(error.response.data));
   };
 
+  const deleteCard = (cardId) => {
+    axios
+      .delete(`URL/cards/${cardId}`)
+      .then(() => {
+        const newCards = cardData.filter((card) => card.id !== cardId);
+        setCardData(newCards);
+      })
+      .catch((error) => {
+        console.error(error.response.data.message);
+      });
+  };
+
   return (
     <div>
       <header>
@@ -85,9 +97,13 @@ function App() {
       </header>
       <main>
         <BoardList />
+        {/* CardList in JSX only for testing purposes */}
+        {/* Reminder: Delete CardList and move content inside there up to BoardList */}
+        {/* once that component has been established */}
         <CardList 
           cards={cardData}
           likeCard={likeCard}
+          deleteCard={deleteCard}
         />
       </main>
     </div>
