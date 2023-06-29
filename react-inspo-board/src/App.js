@@ -47,14 +47,6 @@ function App() {
     })
   };
 
-  const getBoard = () => {
-    if (currentBoard.id) {
-      return (
-        <Board currentBoard={currentBoard} />
-      )
-    };
-  };
-
   const newBoardFormToggle = () => {
     if (showHide === '+') {
       setShowHide('-');
@@ -62,6 +54,24 @@ function App() {
       setShowHide('+');
     }
   };
+
+  const createNewBoard = (newBoardInfo) => {
+    const updateNewBoardInfo = {
+      ...newBoardInfo
+    };
+
+    axios
+      .post(`${URL_PREFIX}/boards`, updateNewBoardInfo)
+      .then(() => {
+        // update the Boards state to refresh the page
+        const newBoardsArray = [...boards];
+        newBoardsArray.push(newBoardInfo);
+        setBoards(newBoardsArray);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }; 
 
   const getBoardListJSX = () => {
     return boards.map((board) => {
@@ -93,14 +103,19 @@ function App() {
       </header>
       <main>
         <section className='left'>
-          <NewBoardForm className={showHide} />
+          <NewBoardForm 
+            showHide={showHide} 
+            createNewBoard={createNewBoard} 
+          />
         </section>
         <section className='right'>
           <h1>Inspo Board</h1>
           <h2>Board Description!</h2>
         </section>
         <section>
-          {getBoard}
+          <Board 
+            currentBoard={currentBoard} 
+          />
         </section>
       </main>
     </div>
