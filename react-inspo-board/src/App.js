@@ -55,7 +55,7 @@ function App() {
       });
   };
 
-  // Reminder: Check with Hannah regarding name of board id and select board board function
+  // Reminder: Check with Hannah regarding name of board id and select board *object* function
   const addCard = (message) => {
     axios
       .post(
