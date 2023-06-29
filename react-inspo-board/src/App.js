@@ -37,6 +37,24 @@ function App() {
       });
   };
 
+  const likeCard = (cardId) => {
+    axios
+      .patch(`URL/cards/${cardId}/like`)
+      .then((result) => {
+        const newCards = [...cardData];
+        for (const card of newCards) {
+          if (card.id === cardId) {
+            console.log(result);
+            card.likes_count = result.data.likes_count;
+          }
+        }
+        setCardData(newCards);
+      })
+      .catch((error) => {
+        console.error(error.response.data.message);
+      });
+  };
+
   return (
     <div>
       <header>
@@ -47,6 +65,7 @@ function App() {
         <BoardList />
         <CardList 
           cards={cardData}
+          likeCard={likeCard}
         />
       </main>
     </div>
