@@ -7,12 +7,12 @@ const Card = (props) => {
 
     const onLikeCard = () => {
         console.log('Card like toggle working');
-        props.likeCard(props.cardID);
+        props.likeCard(props.id);
     };
 
     const onDeleteCard = () => {
         console.log('Card deleted properly');
-        props.deleteCardCallback(props.cardID);
+        props.deleteCard(props.id);
     };
 
     return (
@@ -32,7 +32,7 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-    cardID: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
     message: PropTypes.string.isRequired,
     likeCard: PropTypes.func.isRequired,
     // likeCount: PropTypes.number.isRequired,
