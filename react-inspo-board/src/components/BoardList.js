@@ -19,13 +19,6 @@ const BoardList = (props) => {
     });
   };
 
-  // ~ THIS CODE WOULD BE BETTER IN APP.JS ~
-  // const currentBoard = boards.forEach(board => {
-  //   if (board.id === props.currentBoardId) {
-  //     return board;
-  //   }
-  // });
-
   return (
     <section>
       <span
