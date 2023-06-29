@@ -30,7 +30,7 @@ function App() {
       .get(`URL/boards/${boardId}/cards`)
       .then((response) => {
         console.log(response.data);
-        setCardsData(response.data.cards);
+        setCardData(response.data.cards);
       })
       .catch((error) => {
         console.error(error.response.data.message);
