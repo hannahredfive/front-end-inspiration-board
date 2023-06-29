@@ -55,6 +55,28 @@ function App() {
       });
   };
 
+  // Reminder: Check with Hannah regarding name of board id and select board board function
+  const addCard = (message) => {
+    axios
+      .post(
+        // `URL/boards/${selectedBoard.board_id}/cards`,
+        { message }
+      )
+      .then((result) => {
+        console.log(result);
+        const newCard = {
+          id: result.data.card.id,
+          message: result.data.card.message,
+          likes_count: result.data.card.likes_count,
+          // boardId: result.data.card.board_id,
+        };
+        setCardData([...cardData, newCard], () => {
+          console.log(this.state.cardsData);
+        });
+      })
+      .catch((error) => console.log(error.response.data));
+  };
+
   return (
     <div>
       <header>
