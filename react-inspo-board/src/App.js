@@ -24,6 +24,19 @@ function App() {
 
   const [cardData, setCardData] = useState([]);
 
+  //Get API calls from axios for rendering all cards
+  const getAllCards = (boardId) => {
+    axios
+      .get(`URL/boards/${boardId}/cards`)
+      .then((response) => {
+        console.log(response.data);
+        setCardsData(response.data.cards);
+      })
+      .catch((error) => {
+        console.error(error.response.data.message);
+      });
+  };
+
   return (
     <div>
       <header>
