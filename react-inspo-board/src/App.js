@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import NewBoardForm from './components/NewBoardForm';
-import Board, { getAllCards, likeCard, addCard, deleteCard } from './components/Board';
+// import Board, { getAllCards, likeCard, addCard, deleteCard } from './components/Board';
+import Board from './components/Board';
 import axios, {isCancel, AxiosError} from 'axios';
 
 
@@ -137,10 +138,10 @@ function App() {
         <section>
           <Board 
             currentBoard={currentBoard}
-            getAllCards={getAllCards}
-            addCard={addCard}
-            deleteCard={deleteCard}
-            likeCard={likeCard}
+            // getAllCards={getAllCards}
+            // addCard={addCard}
+            // deleteCard={deleteCard}
+            // likeCard={likeCard}
           />
         </section>
       </main>
