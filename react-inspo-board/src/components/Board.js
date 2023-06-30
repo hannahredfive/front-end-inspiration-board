@@ -92,11 +92,15 @@ const Board = (props) => {
       <h4>{props.owner}</h4>
       <span className='card__list'>
         <CardList 
-          boardId={props.id} 
-          getAllCards={props.getAllCards}
-          addCard={props.addCard}
-          deleteCard={props.deleteCard}
-          likeCard={props.likeCard}
+          // boardId={props.id} 
+          // getAllCards={props.getAllCards}
+          // addCard={props.addCard}
+          // deleteCard={props.deleteCard}
+          // likeCard={props.likeCard}
+          getAllCards={getAllCards}
+          addCard={addCard}
+          deleteCard={deleteCard}
+          likeCard={likeCard}
         />
       </span>
     </section>
