@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Board.css';
 import CardList from './CardList';
 import axios from 'axios';
+import { currentBoard } from './App'
 
 const Board = (props) => {
 
@@ -33,18 +34,6 @@ const Board = (props) => {
             card.likes_count = result.data.likes_count;
           }
         }
-        setCardData(newCards);
-      })
-      .catch((error) => {
-        console.error(error.response.data.message);
-      });
-  };
-
-  const deleteCard = (cardId) => {
-    axios
-      .delete(`${URL_PREFIX}/cards/${cardId}`)
-      .then(() => {
-        const newCards = cardData.filter((card) => card.id !== cardId);
         setCardData(newCards);
       })
       .catch((error) => {
