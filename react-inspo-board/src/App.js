@@ -137,10 +137,6 @@ function App() {
         <section>
           <Board 
             currentBoard={currentBoard}
-            getAllCards={getAllCards}
-            addCard={addCard}
-            deleteCard={deleteCard}
-            likeCard={likeCard}
           />
         </section>
       </main>
