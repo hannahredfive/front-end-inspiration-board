@@ -91,21 +91,7 @@ function App() {
 
   return (
     <div>
-      <header>
-        <h1>Inspo Board</h1>
-        <h2>Board Description!</h2>
-      </header>
-      <main>
-        <BoardList />
-        {/* CardList in JSX only for testing purposes */}
-        {/* Reminder: Delete CardList and move content inside there up to BoardList */}
-        {/* once that component has been established */}
-        <CardList 
-          cards={cardData}
-          likeCard={likeCard}
-          deleteCard={deleteCard}
-        />
-      </main>
+
     </div>
   );
 }
