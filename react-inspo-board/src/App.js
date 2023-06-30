@@ -6,7 +6,7 @@ import axios, {isCancel, AxiosError} from 'axios';
 
 
 function App() {
-  const URL_PREFIX = 'URL_TBD';
+  const URL_PREFIX = 'https://back-end-inspiration-board.onrender.com';
   const [cardData, setCardData] = useState([]);
   const [currentBoard, setCurrentBoard] = useState({
     id: 0,
@@ -78,7 +78,7 @@ function App() {
   //Get API calls from axios for rendering all cards
   const getAllCards = (boardId) => {
     axios
-      .get(`URL/boards/${boardId}/cards`)
+      .get(`${URL_PREFIX}/boards/${boardId}/cards`)
       .then((response) => {
         console.log(response.data);
         setCardData(response.data.cards);
@@ -90,7 +90,7 @@ function App() {
 
   const likeCard = (cardId) => {
     axios
-      .patch(`URL/cards/${cardId}/like`)
+      .patch(`${URL_PREFIX}/cards/${cardId}`)
       .then((result) => {
         const newCards = [...cardData];
         for (const card of newCards) {
@@ -110,7 +110,7 @@ function App() {
   const addCard = (message) => {
     axios
       .post(
-        // `URL/boards/${selectedBoard.board_id}/cards`,
+        `${URL_PREFIX}/boards/${currentBoard.board_id}/cards`,
         { message }
       )
       .then((result) => {
@@ -132,7 +132,7 @@ function App() {
   // By collapsing together and adding conditionals to ID card vs board
   const deleteBoard = (boardId) => {
     axios
-      .delete(`URL/boards/${boardId}`)
+      .delete(`${URL_PREFIX}/boards/${boardId}`)
       .then(() => {
         const newBoards = boards.filter((board) => board.id !== boardId);
         setBoards(newBoards);
@@ -144,7 +144,7 @@ function App() {
 
   const deleteCard = (cardId) => {
     axios
-      .delete(`URL/cards/${cardId}`)
+      .delete(`${URL_PREFIX}/cards/${cardId}`)
       .then(() => {
         const newCards = cardData.filter((card) => card.id !== cardId);
         setCardData(newCards);
