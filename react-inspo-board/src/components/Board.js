@@ -22,13 +22,11 @@ const Board = (props) => {
 };
 
 Board.propTypes = {
-  board: PropTypes.object.isRequired(
-    PropTypes.shape({
+  board: PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       owner: PropTypes.string.isRequired
-    })
-  ),
+    }),
   getAllCards: PropTypes.func.isRequired,
   addCard: PropTypes.func.isRequired,
   deleteCard: PropTypes.func.isRequired,

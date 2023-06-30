@@ -8,11 +8,6 @@ import axios, {isCancel, AxiosError} from 'axios';
 function App() {
   const URL_PREFIX = 'https://back-end-inspiration-board.onrender.com';
   const [cardData, setCardData] = useState([]);
-  const [currentBoard, setCurrentBoard] = useState({
-    id: 0,
-    title: '',
-    owner: ''
-  });
   const [boards, setBoards] = useState([
     {
       id: 0,
@@ -20,6 +15,11 @@ function App() {
       owner: ''
     }
   ]);
+  const [currentBoard, setCurrentBoard] = useState({
+    id: 0,
+    title: '',
+    owner: ''
+  });
   const [showHide, setShowHide] = useState('+')
 
   const loadBoards = () => {
