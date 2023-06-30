@@ -128,6 +128,20 @@ function App() {
       .catch((error) => console.log(error.response.data));
   };
 
+  // Can we make some of this code dryer? 
+  // By collapsing together and adding conditionals to ID card vs board
+  const deleteBoard = (boardId) => {
+    axios
+      .delete(`URL/boards/${boardId}`)
+      .then(() => {
+        const newBoards = boards.filter((board) => board.id !== boardId);
+        setBoards(newBoards);
+      })
+      .catch((error) => {
+        console.error(error.response.data.message);
+      });
+  };
+
   const deleteCard = (cardId) => {
     axios
       .delete(`URL/cards/${cardId}`)
@@ -149,6 +163,13 @@ function App() {
         onClick={changeCurrentBoard(board.id)}
         >
           {board.title}
+          <button
+            id={board.id}
+            name='trash'
+            onClick={deleteBoard(board.id)}
+          >
+            🗑️
+          </button>
         </button>
       )
     });
