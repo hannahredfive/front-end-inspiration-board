@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import NewBoardForm from './components/NewBoardForm';
-import Board from './components/Board';
+import Board, { getAllCards, likeCard, addCard, deleteCard } from './components/Board';
 import axios, {isCancel, AxiosError} from 'axios';
 
 
