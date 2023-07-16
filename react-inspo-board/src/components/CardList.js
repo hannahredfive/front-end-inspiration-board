@@ -10,7 +10,7 @@ import './CardList.css';
 const CardList = (props) => {
   return (
     <div>
-      {props.cardData.map((card) => (
+      {props.cardData?.map((card) => (
         <Card
           // Reminder: Check with Hannah to see what board id prop is named.
           // key={`${card.id}-${card.board_id}`}
