@@ -26,12 +26,12 @@ const NewCardForm = (props) => {
             <h3>Create New Post-it Note</h3>
             <form onSubmit={handleFormSubmit}>
                 <label htmlFor="message">Message:</label>
-                <input>
+                <input
                     name="message"
                     type="text"
                     value={cardFormData.message}
                     onChange={handleMessageChange}
-                </input>
+                />
                 <button type="submit">Post</button>
             </form>
         </section>

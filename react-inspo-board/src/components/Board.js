@@ -4,6 +4,7 @@ import './Board.css';
 import CardList from './CardList';
 import axios from 'axios';
 import currentBoard from '../App';
+import NewCardForm from './NewCardForm';
 
 const Board = (props) => {
 
@@ -92,6 +93,7 @@ const Board = (props) => {
           likeCard={likeCard}
         />
       </span>
+      <NewCardForm addCard={props.addCard}/>
     </section>
   )
 };
