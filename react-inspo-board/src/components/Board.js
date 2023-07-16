@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Board.css';
 import CardList from './CardList';
 import axios from 'axios';
-import { currentBoard } from './App'
+import currentBoard from '../App';
 
 const Board = (props) => {
 
