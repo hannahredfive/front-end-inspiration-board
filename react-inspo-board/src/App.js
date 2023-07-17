@@ -95,13 +95,13 @@ function App() {
         <button 
         id={board.id} 
         name='board'
-        onClick={changeCurrentBoard(board.id)}
+        onClick={() => changeCurrentBoard(board.id)}
         >
           {board.title}
           <button
             id={board.id}
             name='trash'
-            onClick={deleteBoard(board.id)}
+            onClick={() => deleteBoard(board.id)}
           >
             🗑️
           </button>
@@ -121,7 +121,7 @@ function App() {
           >
             New Board {showHide}
           </button>
-          {getBoardListJSX}
+          {getBoardListJSX()}
       </span>
       </header>
       <main>
