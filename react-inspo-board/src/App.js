@@ -42,8 +42,9 @@ function App() {
   }, []);
 
   const changeCurrentBoard = (boardId) => {
+    console.log("???");
     boards.forEach(board => {
-      if (board.id === boardId) {
+      if (board.board_id === boardId) {
         setCurrentBoard(board);
       }
     })
@@ -81,7 +82,7 @@ function App() {
     axios
       .delete(`${URL_PREFIX}/boards/${boardId}`)
       .then(() => {
-        const newBoards = boards.filter((board) => board.id !== boardId);
+        const newBoards = boards.filter((board) => board.board_id !== boardId);
         setBoards(newBoards);
       })
       .catch((error) => {
@@ -93,15 +94,15 @@ function App() {
     return boards.map((board) => {
       return (
         <button 
-        id={board.id} 
+        id={board.board_id} 
         name='board'
-        onClick={() => changeCurrentBoard(board.id)}
+        onClick={() => changeCurrentBoard(board.board_id)}
         >
           {board.title}
           <button
-            id={board.id}
+            id={board.board_id}
             name='trash'
-            onClick={() => deleteBoard(board.id)}
+            onClick={() => deleteBoard(board.board_id)}
           >
             🗑️
           </button>
@@ -138,6 +139,7 @@ function App() {
         <section>
           <Board 
             currentBoard={currentBoard}
+            deleteBoard={deleteBoard}
             // getAllCards={getAllCards}
             // addCard={addCard}
             // deleteCard={deleteCard}

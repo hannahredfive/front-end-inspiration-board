@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './Board.css';
 import CardList from './CardList';
 import axios from 'axios';
-import currentBoard from '../App';
 import NewCardForm from './NewCardForm';
 
 const Board = (props) => {
@@ -14,7 +13,7 @@ const Board = (props) => {
   //Get API calls from axios for rendering all cards
   const getAllCards = (boardId) => {
     axios
-      .get(`${URL_PREFIX}/boards/${boardId}/cards`)
+      .get(`${URL_PREFIX}/boards/${props.currentBoard.id}/cards`)
       .then((response) => {
         console.log(response.data);
         setCardData(response.data.cards);
@@ -46,7 +45,7 @@ const Board = (props) => {
   const addCard = (message) => {
     axios
       .post(
-        `${URL_PREFIX}/boards/${currentBoard.board_id}/cards`,
+        `${URL_PREFIX}/boards/${props.currentBoard.id}/cards`,
         { message }
       )
       .then((result) => {
@@ -55,7 +54,7 @@ const Board = (props) => {
           id: result.data.card.id,
           message: result.data.card.message,
           likes_count: result.data.card.likes_count,
-          // boardId: result.data.card.board_id,
+          boardId: props.currentBoard.id,
         };
         setCardData([...cardData, newCard], () => {
           console.log(this.state.cardsData);
@@ -76,17 +75,25 @@ const Board = (props) => {
       });
   };
 
+  useEffect(() => {
+    console.log(props.currentBoard);
+    if (props.currentBoard.id) {
+      getAllCards(props.currentBoard.id);
+    }
+  }, []);
+
   return (
     <section>
-      <h2>{props.title}</h2>
-      <h4>{props.owner}</h4>
+      <h2>{props.currentBoard.title}</h2>
+      <h4>{props.currentBoard.owner}</h4>
       <span className='card__list'>
         <CardList 
-          boardId={props.id} 
-          getAllCardsProp={props.getAllCards}
-          addCardProp={props.addCard}
-          deleteCardProp={props.deleteCard}
-          likeCardProp={props.likeCard}
+          boardId={props.currentBoard.id} 
+          cards={cardData}
+          // getAllCardsProp={props.getAllCards}
+          // addCardProp={props.addCard}
+          // deleteCardProp={props.deleteCard}
+          // likeCardProp={props.likeCard}
           getAllCards={getAllCards}
           addCard={addCard}
           deleteCard={deleteCard}
@@ -99,16 +106,16 @@ const Board = (props) => {
 };
 
 Board.propTypes = {
-  board: PropTypes.shape({
+  currentBoard: PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       owner: PropTypes.string.isRequired
     }),
-  getAllCards: PropTypes.func.isRequired,
-  addCard: PropTypes.func.isRequired,
-  deleteCard: PropTypes.func.isRequired,
-  likeCard: PropTypes.func.isRequired,
+  deleteBoard: PropTypes.func.isRequired
+  // getAllCards: PropTypes.func.isRequired,
+  // addCard: PropTypes.func.isRequired,
+  // deleteCard: PropTypes.func.isRequired,
+  // likeCard: PropTypes.func.isRequired,
 };
-// Need to add a delete function in here!
 
 export default Board;
