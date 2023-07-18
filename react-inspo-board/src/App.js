@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import NewBoardForm from './components/NewBoardForm';
-// import Board, { getAllCards, likeCard, addCard, deleteCard } from './components/Board';
 import Board from './components/Board';
 import axios, {isCancel, AxiosError} from 'axios';
 
@@ -77,8 +76,6 @@ function App() {
       });
   }; 
 
-  // Can we make some of this code dryer? 
-  // By collapsing together and adding conditionals to ID card vs board
   const deleteBoard = (boardId) => {
     axios
       .delete(`${URL_PREFIX}/boards/${boardId}`)
@@ -91,32 +88,10 @@ function App() {
       });
   };
 
-  // const getBoardListJSX = () => {
-  //   return boards.map((board) => {
-  //     return (
-  //       <button 
-  //       id={board.board_id} 
-  //       name='board'
-  //       onClick={() => changeCurrentBoard(board.board_id)}
-  //       >
-  //         {board.title}
-  //         <button
-  //           id={board.board_id}
-  //           name='trash'
-  //           onClick={() => deleteBoard(board.board_id)}
-  //         >
-  //           🗑️
-  //         </button>
-  //       </button>
-  //     )
-  //   });
-  // };
 
   const getBoardListJSX = () => {
     return boards.map((board) => {
       return (
-        // Added key (and span tag) so React doesn't freak out
-        // <span key={board.board_id}> 
         <button key={board.board_id}
         id={board.board_id} 
         name='board'
@@ -131,7 +106,6 @@ function App() {
             🗑️
           </button>
         </button>
-        // </span>
       )
     });
   };
@@ -165,11 +139,6 @@ function App() {
           {console.log('App JSX level', currentBoard)}
           <Board 
             currentBoard={currentBoard}
-            deleteBoard={deleteBoard}
-            // getAllCards={getAllCards}
-            // addCard={addCard}
-            // deleteCard={deleteCard}
-            // likeCard={likeCard}
           />
         </section>
       </main>

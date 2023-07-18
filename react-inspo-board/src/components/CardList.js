@@ -1,46 +1,10 @@
-/* eslint-disable no-unused-vars */
-// import React from 'react';
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
-// import NewCardForm from './NewBoardForm';
 import './CardList.css';
 import axios from 'axios';
 import NewCardForm from './NewCardForm';
 
-
-// Reminder to possibly props with {currentBoard, incrementLikeCount, deleteBoard}
-// const CardList = (props) => {
-//   return (
-//     <div>
-//       {props.cardData?.map((card) => (
-//         <Card
-//           // Reminder: Check with Hannah to see what board id prop is named.
-//           key={card.cardId}
-//           card={card}
-//           // boardId={card.board_id}
-//           likeCount={card.likes_count}
-//           // message={card.message}
-//           likeCard={props.likeCard} 
-//           deleteCard={props.deleteCard}
-//         />
-//       ))}
-//     </div>
-//   );
-// };
-  
-// CardList.propTypes = {
-//     cardData: PropTypes.arrayOf(
-//         PropTypes.shape({
-//             cardId: PropTypes.number.isRequired,
-//             // boardId: PropTypes.number.isRequired,
-//             likeCount: PropTypes.number.isRequired,
-//             message: PropTypes.string.isRequired,
-//         })
-//     ),
-//     likeCard: PropTypes.func,
-//     deleteCard: PropTypes.func
-// };
 
 const CardList = (props) => {
 
@@ -108,13 +72,6 @@ const CardList = (props) => {
     getAllCards(props.boardId);
   }, []);
 
-  // useEffect(() => {
-  //   console.log(currentBoard);
-  //   if (currentBoard.id) {
-  //     getAllCards(currentBoard.id);
-  //   }
-  // }, []);
-
   console.log('inside CardList', cardData)
 
   return (
@@ -140,10 +97,8 @@ const CardList = (props) => {
   );
 };
 
-// CardList.propTypes = {
-//   currentBoard: PropTypes.object.isRequired
-// };
-
-
+CardList.propTypes = {
+  boardID: PropTypes.number.isRequired
+};
 
 export default CardList;

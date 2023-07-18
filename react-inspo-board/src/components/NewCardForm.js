@@ -14,7 +14,7 @@ const NewCardForm = ({ addCard, boardId }) => {
     const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log('NewCardForm level', boardId)
-        addCard(boardId, cardFormData.message);
+        addCard(boardId, cardFormData);
         setCardFormData({
             message: "",
         });
@@ -38,7 +38,8 @@ const NewCardForm = ({ addCard, boardId }) => {
 };
 
 NewCardForm.propTypes = {
-    addCard: PropTypes.func.isRequired
+    addCard: PropTypes.func.isRequired,
+    boardId: PropTypes.number.isRequired
 };
 
 export default NewCardForm;
