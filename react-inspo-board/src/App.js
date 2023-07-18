@@ -46,6 +46,7 @@ function App() {
     boards.forEach(board => {
       if (board.board_id === boardId) {
         setCurrentBoard(board);
+        console.log(board)
       }
     })
   };
@@ -90,10 +91,33 @@ function App() {
       });
   };
 
+  // const getBoardListJSX = () => {
+  //   return boards.map((board) => {
+  //     return (
+  //       <button 
+  //       id={board.board_id} 
+  //       name='board'
+  //       onClick={() => changeCurrentBoard(board.board_id)}
+  //       >
+  //         {board.title}
+  //         <button
+  //           id={board.board_id}
+  //           name='trash'
+  //           onClick={() => deleteBoard(board.board_id)}
+  //         >
+  //           🗑️
+  //         </button>
+  //       </button>
+  //     )
+  //   });
+  // };
+
   const getBoardListJSX = () => {
     return boards.map((board) => {
       return (
-        <button 
+        // Added key (and span tag) so React doesn't freak out
+        // <span key={board.board_id}> 
+        <button key={board.board_id}
         id={board.board_id} 
         name='board'
         onClick={() => changeCurrentBoard(board.board_id)}
@@ -107,6 +131,7 @@ function App() {
             🗑️
           </button>
         </button>
+        // </span>
       )
     });
   };
@@ -137,6 +162,7 @@ function App() {
           <h2>Board Description!</h2>
         </section>
         <section>
+          {console.log('App JSX level', currentBoard)}
           <Board 
             currentBoard={currentBoard}
             deleteBoard={deleteBoard}
