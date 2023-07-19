@@ -93,12 +93,14 @@ function App() {
     return boards.map((board) => {
       if (board.board_id !== 0) {
         return (
-          <button key={board.board_id}
-          id={board.board_id} 
-          name='board'
-          onClick={() => changeCurrentBoard(board.board_id)}
-          >
-            {board.title}
+          <span key={board.board_id}>
+            <button 
+            id={board.board_id} 
+            name='board'
+            onClick={() => changeCurrentBoard(board.board_id)}
+            >
+              {board.title}
+            </button>
             <button
               id={board.board_id}
               name='trash'
@@ -106,7 +108,7 @@ function App() {
             >
               🗑️
             </button>
-          </button>
+          </span>
         )
       }
     });
