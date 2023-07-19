@@ -161,7 +161,7 @@ const CardList = (props) => {
   // console.log('inside CardList', cardData)
 
   return (
-    <section>
+    <section className='cardlist'>
       <div>
         {console.log('Inside cardData', cardData)}
         {cardData.map((card) => (
@@ -176,11 +176,13 @@ const CardList = (props) => {
         ))}
       </div>
       <div>
-      {console.log('CardList JSX level', props.boardId)}
-        <NewCardForm 
-          addCard={addCard}
-          boardId={props.boardId}
-        /> 
+        <section className='cardform'>
+        {console.log('CardList JSX level', props.boardId)}
+          <NewCardForm 
+            addCard={addCard}
+            boardId={props.boardId}
+          /> 
+        </section>
       </div>
     </section>
   );

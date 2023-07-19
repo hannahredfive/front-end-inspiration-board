@@ -1,0 +1,9 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    background-color: plum;
+    font-family: 'Roboto', sans-serif;
+}
+.board h2 {
+    font-family: 'Roboto Slab', serif;
+}

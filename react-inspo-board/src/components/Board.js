@@ -8,14 +8,16 @@ const Board = (props) => {
   console.log('Props from Board', props)
 
   return (
-    <section>
+    <section className='board'>
       <h2>{props.currentBoard.title}</h2>
-      <h4>{props.currentBoard.owner}</h4>
-      <span className='card__list'>
-        <CardList
-          boardId={props.currentBoard.board_id}       
-        />
-      </span>
+      <h3>{props.currentBoard.owner}</h3>
+      <p>
+        <span className='cardlist'>
+          <CardList
+            boardId={props.currentBoard.board_id}       
+          />
+        </span>
+      </p>
     </section>
   )
 };
