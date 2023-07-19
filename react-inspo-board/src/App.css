@@ -45,3 +45,16 @@ html {
   }
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  color: rgb(2, 87, 87);
+  padding-bottom: 2%;
+}
+
+p {
+  line-height: 5px;
+}
