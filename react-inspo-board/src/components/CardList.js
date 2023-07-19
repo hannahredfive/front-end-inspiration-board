@@ -17,7 +17,8 @@ const CardList = (props) => {
     axios
       .get(`${URL_PREFIX}/boards/${props.boardId}/cards`)
       .then((response) => {
-        setCardData(response.data);
+        console.log('All Responses', response, response.data, response.data.cards)
+        setCardData(response.data.cards);
       })
       .catch((error) => {
         console.log('getAllCards error:', error);
@@ -72,11 +73,12 @@ const CardList = (props) => {
     getAllCards(props.boardId);
   }, []);
 
-  console.log('inside CardList', cardData)
+  // console.log('inside CardList', cardData)
 
   return (
     <section>
       <div>
+        {console.log('Inside cardData', cardData)}
         {cardData.map((card) => (
           <Card
             key={card.card_id}
@@ -98,7 +100,7 @@ const CardList = (props) => {
 };
 
 CardList.propTypes = {
-  boardID: PropTypes.number.isRequired
+  boardId: PropTypes.number.isRequired
 };
 
 export default CardList;
