@@ -1,3 +1,11 @@
+html {
+  /* background-color: skyblue; */
+    background-image: url('/assets/fluffybutt-inspo-board-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +44,4 @@
     transform: rotate(360deg);
   }
 }
+
