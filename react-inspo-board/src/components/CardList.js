@@ -13,9 +13,10 @@ const CardList = (props) => {
   const URL_PREFIX = 'https://back-end-inspiration-board.onrender.com';
   const [cardData, setCardData] = useState([]);
 
-  const getAllCards = async () => {
+  const getAllCards = () => {
+    console.log('BoardId First Line GetAllCards', props.boardId);
     if (props.boardId > 0) {
-      await axios
+      axios
       .get(`${URL_PREFIX}/boards/${props.boardId}/cards`)
       .then((response) => {
         console.log('All Responses', response, response.data, response.data.cards)
@@ -29,8 +30,8 @@ const CardList = (props) => {
   };
 
   useEffect(() => {
-    getAllCards(props.boardId);
-  }, []);
+    getAllCards();
+  }, [props.boardId]);
 
   // const getAllCards = () => {
   //   if (props.boardId > 0) {

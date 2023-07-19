@@ -8,11 +8,11 @@ const Card = ({ card, likeCardCount, deleteCard }) => {
         <section>
             <p>{card.message}</p>
             <div>
-                <button onClick={likeCardCount(card)}>
+                <button onClick={() => likeCardCount(card)}>
                     {card.likes_count ? '❤️' : '🤍'}
                 </button>
                 {/* <p>{likeCount}</p> */}
-                <button onClick={deleteCard(card)}>
+                <button onClick={() => deleteCard(card)}>
                     🆇
                 </button>
             </div>
@@ -22,7 +22,7 @@ const Card = ({ card, likeCardCount, deleteCard }) => {
 
 Card.propTypes = {
     card: PropTypes.shape({
-        board_id: PropTypes.number.isRequired,
+        // board_id: PropTypes.number.isRequired,
         card_id: PropTypes.number.isRequired,
         message: PropTypes.string.isRequired,
         likes_count: PropTypes.number.isRequired

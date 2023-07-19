@@ -12,7 +12,6 @@ const Board = (props) => {
       <h2>{props.currentBoard.title}</h2>
       <h4>{props.currentBoard.owner}</h4>
       <span className='card__list'>
-        {console.log('Board JSX level', props.currentBoard.board_id)}
         <CardList
           boardId={props.currentBoard.board_id}       
         />

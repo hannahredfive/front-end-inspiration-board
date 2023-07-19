@@ -113,6 +113,8 @@ function App() {
       }
     });
   };
+  
+  console.log('App JSX level', currentBoard)
 
   return (
     <div>
@@ -140,7 +142,6 @@ function App() {
           <h2>Board Description!</h2>
         </section>
         <section>
-          {console.log('App JSX level', currentBoard)}
           <Board 
             currentBoard={currentBoard}
           />
