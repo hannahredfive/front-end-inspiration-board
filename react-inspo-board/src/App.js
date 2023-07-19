@@ -115,7 +115,7 @@ function App() {
   console.log('App JSX level', currentBoard)
 
   return (
-    <div>
+    <div className="container">
       <header>
       <span
         className="board__list bookmark__button">

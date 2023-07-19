@@ -6,6 +6,12 @@ html {
     height: 100vh;
 }
 
+#container {
+  /* margin: 0 auto;
+  width: 960px; */
+  padding-left: 500px
+}
+
 .App {
   text-align: center;
 }
