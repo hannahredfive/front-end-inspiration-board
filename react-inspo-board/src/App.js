@@ -116,18 +116,39 @@ function App() {
 
   return (
     <div className="container">
-      <header>
       <span
-        className="board__list bookmark__button">
+        className="board__list">
           <button 
             id='new__board__toggle'
             onClick={newBoardFormToggle}
           >
             New Board {showHide}
           </button>
+          {/* {boards.map((board) => {
+              if (board.board_id !== 0) {
+                return (
+                  <span key={board.board_id}>
+                    <button 
+                    id={board.board_id} 
+                    name='board'
+                    onClick={() => changeCurrentBoard(board.board_id)}
+                    >
+                      {board.title}
+                    </button>
+                    <button
+                      id={board.board_id}
+                      name='trash'
+                      onClick={() => deleteBoard(board.board_id)}
+                    >
+                      🗑️
+                    </button>
+                  </span>
+                )
+              }
+            })
+          } */}
           {getBoardListJSX()}
       </span>
-      </header>
       <main>
         <section className='left'>
           <NewBoardForm 

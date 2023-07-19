@@ -8,10 +8,13 @@ html {
 
 .container {
   display: grid;
+  /* grid-auto-flow: dense; */
   grid-template-columns: 1fr 3fr 1fr;
-
-
 }
+
+/* .board__list {
+  grid-column: 2;
+} */
 
 .App {
   text-align: center;
