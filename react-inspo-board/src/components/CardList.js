@@ -52,15 +52,35 @@ const CardList = (props) => {
   //   getAllCards(props.boardId);
   // }, []);
   
-  const likeCardCount = (newCard) => {
+  const likeCardCount = (boardId, newCard) => {
+    // Patch is for liking a card
     axios
-      .put(`${URL_PREFIX}/cards/${newCard.card_id}`)
+      .patch(`${URL_PREFIX}/boards/${boardId}/cards/${newCard.card_id}`)
       .then(() => {
         const newCardsData = cardData.map((card) => {
           if (card.card_id !== newCard.card_id) {
             return card;
           };
           return {...newCard, likes_count: newCard.likes_count + 1};
+        });
+        setCardData(newCardsData);
+      })
+      .catch((error) => {
+        console.log('likeCardCount error:', error);
+        alert('Unable to like the card.');
+      });
+  };
+
+  const disLikeCardCount = (boardId, newCard) => {
+    // Put is for disliking a card
+    axios
+      .put(`${URL_PREFIX}/boards/${boardId}/cards/${newCard.card_id}`)
+      .then(() => {
+        const newCardsData = cardData.map((card) => {
+          if (card.card_id !== newCard.card_id) {
+            return card;
+          };
+          return {...newCard, likes_count: newCard.likes_count - 1};
         });
         setCardData(newCardsData);
       })
@@ -114,9 +134,9 @@ const CardList = (props) => {
   //     });
   // };
 
-  const deleteCard = (card) => {
+  const deleteCard = (boardId, card) => {
     axios
-      .delete(`${URL_PREFIX}/cards/${card.card_id}`)
+      .delete(`${URL_PREFIX}/boards/${boardId}/cards/${card.card_id}`)
       .then(() => {
         getAllCards();
       })
@@ -149,7 +169,9 @@ const CardList = (props) => {
             key={card.card_id}
             card={card}
             likeCardCount={likeCardCount}
-            deleteCard={deleteCard} 
+            disLikeCardCount={disLikeCardCount}
+            deleteCard={deleteCard}
+            boardId={props.boardId} 
           />
         ))}
       </div>

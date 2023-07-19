@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
 
-const Card = ({ card, likeCardCount, deleteCard }) => {
-
+const Card = ({ card, likeCardCount, disLikeCardCount, deleteCard, boardId }) => {
+    console.log('Card boardId', boardId);
     return (
         <section>
             <p>{card.message}</p>
             <div>
-                <button onClick={() => likeCardCount(card)}>
+                <button onClick={() => likeCardCount(boardId, card)}>
                     {card.likes_count ? '❤️' : '🤍'}
                 </button>
                 {/* <p>{likeCount}</p> */}
-                <button onClick={() => deleteCard(card)}>
+                <button onClick={() => deleteCard(boardId, card)}>
                     🆇
                 </button>
             </div>
@@ -22,13 +22,14 @@ const Card = ({ card, likeCardCount, deleteCard }) => {
 
 Card.propTypes = {
     card: PropTypes.shape({
-        // board_id: PropTypes.number.isRequired,
         card_id: PropTypes.number.isRequired,
         message: PropTypes.string.isRequired,
         likes_count: PropTypes.number.isRequired
     }),
     likeCardCount: PropTypes.func.isRequired,
-    deleteCard: PropTypes.func.isRequired
+    disLikeCardCount: PropTypes.func.isRequired,
+    deleteCard: PropTypes.func.isRequired,
+    boardId: PropTypes.number.isRequired
 };
 
 export default Card;

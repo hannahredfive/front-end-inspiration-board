@@ -67,10 +67,7 @@ function App() {
       .post(`${URL_PREFIX}/boards`, updateNewBoardInfo)
       .then(() => {
         // update the Boards state to refresh the page
-        // const newBoardsArray = [...boards];
-        // newBoardsArray.push(newBoardInfo);
         loadBoards();
-        // setBoards(newBoardsArray);
       })
       .catch((error) => {
         console.log(error);
@@ -140,7 +137,6 @@ function App() {
         </section>
         <section className='right'>
           <h1>Inspo Board</h1>
-          <h2>Board Description!</h2>
         </section>
         <section>
           <Board 
