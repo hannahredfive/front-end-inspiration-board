@@ -9,13 +9,13 @@ function App() {
   const URL_PREFIX = 'https://back-end-inspiration-board.onrender.com';
   const [boards, setBoards] = useState([
     {
-      id: 0,
+      board_id: 0,
       title: '',
       owner: ''
     }
   ]);
   const [currentBoard, setCurrentBoard] = useState({
-    id: 0,
+    board_id: 0,
     title: '',
     owner: ''
   });
@@ -91,22 +91,26 @@ function App() {
 
   const getBoardListJSX = () => {
     return boards.map((board) => {
-      return (
-        <button key={board.board_id}
-        id={board.board_id} 
-        name='board'
-        onClick={() => changeCurrentBoard(board.board_id)}
-        >
-          {board.title}
-          <button
-            id={board.board_id}
-            name='trash'
-            onClick={() => deleteBoard(board.board_id)}
-          >
-            🗑️
-          </button>
-        </button>
-      )
+      if (board.board_id !== 0) {
+        return (
+          <span key={board.board_id}>
+            <button 
+            id={board.board_id} 
+            name='board'
+            onClick={() => changeCurrentBoard(board.board_id)}
+            >
+              {board.title}
+            </button>
+            <button
+              id={board.board_id}
+              name='trash'
+              onClick={() => deleteBoard(board.board_id)}
+            >
+              🗑️
+            </button>
+          </span>
+        )
+      }
     });
   };
 
