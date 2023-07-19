@@ -9,12 +9,12 @@ const Card = ({ card, likeCardCount, disLikeCardCount, deleteCard, boardId }) =>
             <p>{card.message}</p>
             <div>
                 <button onClick={() => likeCardCount(boardId, card)}>
-                    ❤️
+                    + ❤️
                     {/* {card.likes_count ? '❤️' : '🤍'} */}
                 </button>
                 {card.likes_count}
                 <button onClick={() => disLikeCardCount(boardId, card)}>
-                    🤍
+                    🤍 -
                 </button>
                 <button onClick={() => deleteCard(boardId, card)}>
                     🆇
