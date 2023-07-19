@@ -1,0 +1,27 @@
+section {
+    background-color: aquamarine;
+    margin: 3rem
+}
+
+.new-board-form {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 10%
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.new-board-form__form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+    width: 100%;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.add-new-board-button {
+    background-color: lemonchiffon;
+}
