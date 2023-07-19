@@ -67,9 +67,10 @@ function App() {
       .post(`${URL_PREFIX}/boards`, updateNewBoardInfo)
       .then(() => {
         // update the Boards state to refresh the page
-        const newBoardsArray = [...boards];
-        newBoardsArray.push(newBoardInfo);
-        setBoards(newBoardsArray);
+        // const newBoardsArray = [...boards];
+        // newBoardsArray.push(newBoardInfo);
+        loadBoards();
+        // setBoards(newBoardsArray);
       })
       .catch((error) => {
         console.log(error);
@@ -113,7 +114,7 @@ function App() {
       }
     });
   };
-  
+
   console.log('App JSX level', currentBoard)
 
   return (

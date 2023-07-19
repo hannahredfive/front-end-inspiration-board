@@ -4,7 +4,6 @@ import './NewBoardForm.css';
 
 const INITIAL_FORM_DATA = {
   title: '',
-  description: '',
   owner: ''
 };
 
@@ -35,14 +34,6 @@ const NewBoardForm = (props) => {
           name='title'
           type='text'
           value={ boardFormData.title }
-          onChange={ anInputChanged }
-        />
-        <label htmlFor='boardDescription'>Description:</label>
-        <input
-          id='boardDescription'
-          name='description'
-          type='text'
-          value={ boardFormData.description }
           onChange={ anInputChanged }
         />
         <label htmlFor='boardOwner'>Owner:</label>
