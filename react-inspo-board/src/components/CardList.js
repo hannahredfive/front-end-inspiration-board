@@ -14,7 +14,8 @@ const CardList = (props) => {
   const [cardData, setCardData] = useState([]);
 
   const getAllCards = () => {
-    axios
+    if (props.boardId > 0) {
+      axios
       .get(`${URL_PREFIX}/boards/${props.boardId}/cards`)
       .then((response) => {
         console.log('All Responses', response, response.data, response.data.cards)
@@ -23,7 +24,8 @@ const CardList = (props) => {
       .catch((error) => {
         console.log('getAllCards error:', error);
         alert('Unable to get cards for this board.');
-      });
+      })
+    };
   };
 
   const likeCard = (cardId) => {
@@ -40,7 +42,7 @@ const CardList = (props) => {
         setCardData(newCards);
       })
       .catch((error) => {
-        console.error(error.response.data.message);
+        console.error('likeCard error:', error);
       });
   };
 
@@ -65,7 +67,7 @@ const CardList = (props) => {
         setCardData(newCards);
       })
       .catch((error) => {
-        console.error(error.response.data.message);
+        console.error('deleteCard error:', error);
       });
   };
 
