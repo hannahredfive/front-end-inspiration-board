@@ -1,7 +1,7 @@
 .board {
     display: flex;
     flex-direction: column;
-    background-color: plum;
+    /* background-color: plum; */
     font-family: 'Roboto', sans-serif;
 }
 .board h2 {
