@@ -26,8 +26,9 @@ const NewBoardForm = (props) => {
 
   return (
     <section className={props.showHide}>
+      <div className='new-board-form' >
       <h3>Create New Board</h3>
-      <form onSubmit={handleFormSubmit}>
+      <form className='new-board-form__form' onSubmit={handleFormSubmit}>
         <label htmlFor='boardName'>Board Title:</label>
         <input
           id='boardTitle'
@@ -44,8 +45,9 @@ const NewBoardForm = (props) => {
           value={ boardFormData.owner }
           onChange={ anInputChanged }
         />
-        <input type='submit' value='Add new board'></input>
+        <input className='add-new-board-button' type='submit' value='Add new board'></input>
       </form>
+      </div>
     </section>
   );
 };
