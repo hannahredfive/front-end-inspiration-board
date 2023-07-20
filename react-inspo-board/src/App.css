@@ -1,11 +1,11 @@
 html {
   /* background-color: skyblue; */
-    /* background-image: url('/assets/fluffybutt-inspo-board-background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh; */
-    background: url('/assets/fluffybutt-inspo-board-background.png') no-repeat center fixed;
-    background-size: cover;
+  /* background-image: url('/assets/fluffybutt-inspo-board-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh; */
+  background: url('/assets/fluffybutt-inspo-board-background.png') no-repeat center fixed;
+  background-size: cover;
 }
 
 .webpage-border {

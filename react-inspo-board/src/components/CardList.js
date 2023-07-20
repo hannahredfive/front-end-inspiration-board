@@ -165,10 +165,12 @@ const CardList = (props) => {
       <div className='cardform'>
         <section>
         {console.log('CardList JSX level', props.boardId)}
+        {!!props.boardId && 
           <NewCardForm 
             addCard={addCard}
             boardId={props.boardId}
           /> 
+        }
         </section>
       </div>
       <div className='card-list-container'>
