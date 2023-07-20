@@ -54,7 +54,7 @@ html {
 
 .new-board-button {
   margin-right: 10px;
-  background-color: rgb(88, 216, 249);
+  background-color: rgb(138, 205, 221);
   border: none;
   padding: 10px;
   font-size: 14px;
@@ -62,11 +62,11 @@ html {
 }
 
 .new-board-button:hover {
-  background-color: rgb(113, 190, 164);
+  background-color: rgb(77, 165, 209);
 }
 
 .board-buttons {
-  background-color: rgb(59, 194, 199);
+  background-color: rgb(160, 216, 206);
   border: none;
   padding: 9.5px;
   font-size: 14px;
@@ -74,11 +74,11 @@ html {
 }
 
 .board-buttons:hover {
-  background-color: rgb(61, 174, 235);
+  background-color: rgb(123, 196, 199);
 }
 
 .trash-buttons {
-  background-color: rgb(59, 194, 199);
+  background-color: rgb(160, 216, 206);
   border: none;
   font-size: 14px;
   padding-top: 5px;
@@ -88,5 +88,5 @@ html {
 }
 
 .trash-buttons:hover {
-  background-color: rgb(61, 174, 235);
+  background-color: rgb(123, 196, 199);
 }

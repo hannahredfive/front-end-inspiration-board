@@ -34,13 +34,12 @@ input {
 
 .form-button {
     margin-top: 5%;
-    background-color: rgb(88, 216, 249);
+    background-color: rgb(138, 205, 221);
     border: none;
     padding: 10px;
     font-size: 14px;
-    /* box-shadow: 5px 5px 5px rgb(87, 150, 179); */
   }
   
   .form-button:hover {
-    background-color: rgb(113, 190, 164);
+    background-color: rgb(77, 165, 209);
   }
