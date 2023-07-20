@@ -1,17 +1,30 @@
 html {
   /* background-color: skyblue; */
-    background-image: url('/assets/fluffybutt-inspo-board-background.png');
+    /* background-image: url('/assets/fluffybutt-inspo-board-background.png');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100vh; */
+    background: url('/assets/fluffybutt-inspo-board-background.png') no-repeat center fixed;
+    background-size: cover;
 }
 
-.container {
+.webpage-border {
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 2%;
+}
+
+.board-container {
   display: grid;
   /* grid-auto-flow: dense; */
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr;
 }
 
+.board-list {
+  display: flex;
+  background-color: blue;
+  justify-content: center;
+}
 /* .board__list {
   grid-column: 2;
 } */
@@ -56,13 +69,14 @@ html {
 }
 
 footer {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
   text-align: center;
-  padding: 0;
+  /* padding: 0; */
   color: rgb(2, 87, 87);
   padding-bottom: 2%;
+  background-color: rgb(141, 141, 147);
 }
 
 p {

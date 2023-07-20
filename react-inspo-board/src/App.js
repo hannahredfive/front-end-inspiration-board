@@ -115,39 +115,20 @@ function App() {
   console.log('App JSX level', currentBoard)
 
   return (
-    <div className="container">
-      <span
-        className="board__list">
-          <button 
-            id='new__board__toggle'
-            onClick={newBoardFormToggle}
-          >
-            New Board {showHide}
-          </button>
-          {/* {boards.map((board) => {
-              if (board.board_id !== 0) {
-                return (
-                  <span key={board.board_id}>
-                    <button 
-                    id={board.board_id} 
-                    name='board'
-                    onClick={() => changeCurrentBoard(board.board_id)}
-                    >
-                      {board.title}
-                    </button>
-                    <button
-                      id={board.board_id}
-                      name='trash'
-                      onClick={() => deleteBoard(board.board_id)}
-                    >
-                      🗑️
-                    </button>
-                  </span>
-                )
-              }
-            })
-          } */}
-          {getBoardListJSX()}
+    <div className="webpage-border">
+      <span className="board-container">
+          <div className="board-list">
+            <button 
+              id='new__board__toggle'
+              onClick={newBoardFormToggle}
+            >
+              New Board {showHide}
+            </button>
+            {getBoardListJSX()}
+          </div>
+          {/* <div className="board-list">
+            {getBoardListJSX()}
+          </div> */}
       </span>
       <main>
         <section className='left'>
@@ -170,7 +151,6 @@ function App() {
         <p>Copyright © 2023 Kathleen, Sel, Hannah and Linh. All rights reserved.</p>
       </footer>
     </div>
-
   );
 };
 
