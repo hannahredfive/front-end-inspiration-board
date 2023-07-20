@@ -1,6 +1,7 @@
-.cardlist {
-    display: flex;
-    flex-direction: row;
+.card-list-container {
+    display: grid;
+    /* flex-direction: row; */
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-around;
     /* background-color: bisque; */
 }

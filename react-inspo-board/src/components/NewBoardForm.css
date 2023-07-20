@@ -1,27 +1,46 @@
 section {
-    background-color: aquamarine;
-    margin: 3rem
+    /* background-color: aquamarine; */
+    margin: 2rem
 }
 
 .new-board-form {
     display: grid;
     grid-template-rows: auto;
-    gap: 10%
+    justify-content: center;
+    /* gap: 10% */
 }
 
 * {
     font-family: 'Roboto', sans-serif;
 }
 
-.new-board-form__form {
+.new-board-form-container {
+    /* background-color: bisque; */
     display: flex;
     flex-direction: column;
     margin-bottom: 2em;
     width: 100%;
     gap: 10px;
-    align-items: flex-start;
+    align-items: center;
+}
+
+.input-field {
+    width: 500px;
 }
 
 .add-new-board-button {
     background-color: lemonchiffon;
 }
+
+.add-new-board-button {
+    margin-right: 10px;
+    background-color: rgb(88, 216, 249);
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    /* box-shadow: 5px 5px 5px rgb(87, 150, 179); */
+  }
+  
+  .add-new-board-button:hover {
+    background-color: rgb(113, 190, 164);
+  }

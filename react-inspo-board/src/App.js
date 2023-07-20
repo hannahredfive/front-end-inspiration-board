@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import NewBoardForm from './components/NewBoardForm';
+// import NewCardForm, { addCard } from './NewCardForm';
 import Board from './components/Board';
 import axios, {isCancel, AxiosError} from 'axios';
 
@@ -19,7 +20,7 @@ function App() {
     title: '',
     owner: ''
   });
-  const [showHide, setShowHide] = useState('+')
+  const [showHide, setShowHide] = useState(false)
 
   const loadBoards = () => {
     axios
@@ -51,10 +52,10 @@ function App() {
   };
 
   const newBoardFormToggle = () => {
-    if (showHide === '+') {
-      setShowHide('-');
+    if (showHide === true) {
+      setShowHide(false);
     } else {
-      setShowHide('+');
+      setShowHide(true);
     }
   };
 
@@ -92,14 +93,14 @@ function App() {
       if (board.board_id !== 0) {
         return (
           <span key={board.board_id}>
-            <button 
+            <button className="board-buttons"
             id={board.board_id} 
             name='board'
             onClick={() => changeCurrentBoard(board.board_id)}
             >
               {board.title}
             </button>
-            <button
+            <button className="trash-buttons"
               id={board.board_id}
               name='trash'
               onClick={() => deleteBoard(board.board_id)}
@@ -121,11 +122,11 @@ function App() {
       </section>
       <span className="board-container">
           <div className="board-list">
-            <button 
+            <button className="new-board-button"
               id='new__board__toggle'
               onClick={newBoardFormToggle}
             >
-              New Board {showHide}
+              New Board {showHide ? '-': '+'}
             </button>
             {getBoardListJSX()}
           </div>
@@ -134,17 +135,26 @@ function App() {
           </div> */}
       </span>
       <main>
-        <section className='left'>
-          <NewBoardForm 
-            showHide={showHide} 
-            createNewBoard={createNewBoard} 
-          />
-        </section>
+          {showHide && 
+            <section className='left'>
+              <NewBoardForm 
+                showHide={showHide} 
+                createNewBoard={createNewBoard} 
+                />
+            </section>
+          }
         <section>
           <Board 
             currentBoard={currentBoard}
           />
         </section>
+        {/* <section className='cardform'>
+        {console.log('CardList JSX level', changeCurrentBoard.boardId)}
+          <NewCardForm 
+            addCard={addCard}
+            boardId={changeCurrentBoard.boardId}
+          /> 
+        </section> */}
       </main>
       <footer>
         <p>Made with love by Team Fluffybutt, last updated July 2023</p>

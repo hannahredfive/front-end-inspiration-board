@@ -16,6 +16,7 @@ html {
 
 .title-container {
   text-align: center;
+  margin: 0;
 }
 
 .animated-title {
@@ -47,12 +48,47 @@ html {
 
 .board-list {
   display: flex;
-  background-color: blue;
   justify-content: center;
 }
-/* .board__list {
-  grid-column: 2;
-} */
+
+.new-board-button {
+  margin-right: 10px;
+  background-color: rgb(88, 216, 249);
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  box-shadow: 5px 5px 5px rgb(87, 150, 179);
+}
+
+.new-board-button:hover {
+  background-color: rgb(113, 190, 164);
+}
+
+.board-buttons {
+  background-color: rgb(59, 194, 199);
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  box-shadow: 5px 5px 5px rgb(87, 150, 179);
+}
+
+.board-buttons:hover {
+  background-color: rgb(61, 174, 235);
+}
+
+.trash-buttons {
+  background-color: rgb(59, 194, 199);
+  border: none;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 8px;
+  margin-right: 10px;
+  box-shadow: 5px 5px 5px rgb(87, 150, 179);
+}
+
+.trash-buttons:hover {
+  background-color: rgb(61, 174, 235);
+}
 
 .App {
   text-align: center;

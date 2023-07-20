@@ -9,8 +9,8 @@ const Board = (props) => {
 
   return (
     <section className='board'>
-      <h2>{props.currentBoard.title}</h2>
-      <h3>{props.currentBoard.owner}</h3>
+      {/* <h2>{props.currentBoard.title}</h2>
+      <h3>{props.currentBoard.owner}</h3> */}
       <p>
         <span className='cardlist'>
           <CardList

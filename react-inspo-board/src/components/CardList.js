@@ -161,8 +161,17 @@ const CardList = (props) => {
   // console.log('inside CardList', cardData)
 
   return (
-    <section className='cardlist'>
-      <div>
+    <section >
+      <div className='cardform'>
+        <section>
+        {console.log('CardList JSX level', props.boardId)}
+          <NewCardForm 
+            addCard={addCard}
+            boardId={props.boardId}
+          /> 
+        </section>
+      </div>
+      <div className='card-list-container'>
         {console.log('Inside cardData', cardData)}
         {cardData.map((card) => (
           <Card
@@ -174,15 +183,6 @@ const CardList = (props) => {
             boardId={props.boardId} 
           />
         ))}
-      </div>
-      <div>
-        <section className='cardform'>
-        {console.log('CardList JSX level', props.boardId)}
-          <NewCardForm 
-            addCard={addCard}
-            boardId={props.boardId}
-          /> 
-        </section>
       </div>
     </section>
   );

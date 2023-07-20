@@ -27,10 +27,10 @@ const NewBoardForm = (props) => {
   return (
     <section className={props.showHide}>
       <div className='new-board-form' >
-      <h3>Create New Board</h3>
-      <form className='new-board-form__form' onSubmit={handleFormSubmit}>
+      <h3 classname='board-form-title'>Create New Board</h3>
+      <form className='new-board-form-container' onSubmit={handleFormSubmit}>
         <label htmlFor='boardName'>Board Title:</label>
-        <input
+        <input className='input-field'
           id='boardTitle'
           name='title'
           type='text'
@@ -38,7 +38,7 @@ const NewBoardForm = (props) => {
           onChange={ anInputChanged }
         />
         <label htmlFor='boardOwner'>Owner:</label>
-        <input
+        <input className='input-field'
           id='boardOwner'
           name='owner'
           type='text'
