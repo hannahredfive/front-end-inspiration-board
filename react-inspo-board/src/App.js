@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import NewBoardForm from './components/NewBoardForm';
-// import NewCardForm, { addCard } from './NewCardForm';
 import Board from './components/Board';
 import axios, {isCancel, AxiosError} from 'axios';
 
@@ -130,9 +129,6 @@ function App() {
             </button>
             {getBoardListJSX()}
           </div>
-          {/* <div className="board-list">
-            {getBoardListJSX()}
-          </div> */}
       </span>
       <main>
           {showHide && 
@@ -148,13 +144,6 @@ function App() {
             currentBoard={currentBoard}
           />
         </section>
-        {/* <section className='cardform'>
-        {console.log('CardList JSX level', changeCurrentBoard.boardId)}
-          <NewCardForm 
-            addCard={addCard}
-            boardId={changeCurrentBoard.boardId}
-          /> 
-        </section> */}
       </main>
     </div>
   );

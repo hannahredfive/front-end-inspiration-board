@@ -30,7 +30,6 @@ const NewBoardForm = (props) => {
       <h3 classname='board-form-title'>Create New Board</h3>
       <form className='form-container' onSubmit={handleFormSubmit}>
         <label htmlFor='boardName'>Board Title:</label>
-        {/* <input className='input-field' */}
         <input
           id='boardTitle'
           name='title'
@@ -39,7 +38,6 @@ const NewBoardForm = (props) => {
           onChange={ anInputChanged }
         />
         <label htmlFor='boardOwner'>Owner:</label>
-        {/* <input className='input-field' */}
         <input
           id='boardOwner'
           name='owner'
