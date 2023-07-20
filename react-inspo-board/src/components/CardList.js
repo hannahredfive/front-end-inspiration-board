@@ -33,24 +33,6 @@ const CardList = (props) => {
     getAllCards();
   }, [props.boardId]);
 
-  // const getAllCards = () => {
-  //   if (props.boardId > 0) {
-  //     axios
-  //     .get(`${URL_PREFIX}/boards/${props.boardId}/cards`)
-  //     .then((response) => {
-  //       console.log('All Responses', response, response.data, response.data.cards)
-  //       setCardData(response.data.cards);
-  //     })
-  //     .catch((error) => {
-  //       console.log('getAllCards error:', error);
-  //       alert('Unable to get cards for this board.');
-  //     })
-  //   };
-  // };
-
-  // useEffect(() => {
-  //   getAllCards(props.boardId);
-  // }, []);
   
   const likeCardCount = (boardId, newCard) => {
     // Patch is for liking a card
@@ -90,24 +72,6 @@ const CardList = (props) => {
       });
   };
 
-  // const likeCard = (cardId) => {
-  //   axios
-  //     .patch(`${URL_PREFIX}/cards/${cardId}`)
-  //     .then((result) => {
-  //       const newCards = [...cardData];
-  //       for (const card of newCards) {
-  //         if (card.id === cardId) {
-  //           console.log(result);
-  //           card.likes_count = result.data.likes_count;
-  //         }
-  //       }
-  //       setCardData(newCards);
-  //     })
-  //     .catch((error) => {
-  //       console.error('likeCard error:', error);
-  //     });
-  // };
-
   const addCard = (boardId, newCard) => {
     console.log(boardId, newCard)
     axios
@@ -121,19 +85,6 @@ const CardList = (props) => {
       });
   };
 
-  // const addCard = (boardId, message) => {
-  //   console.log(boardId, message)
-  //   axios
-  //     .post(`${URL_PREFIX}/boards/${boardId}/cards`, message)
-  //     .then(() => {
-  //       getAllCards();
-  //     })
-  //     .catch((error) => {
-  //       console.log('addCard error:', error);
-  //       alert('Unable to create a new card.');
-  //     });
-  // };
-
   const deleteCard = (boardId, card) => {
     axios
       .delete(`${URL_PREFIX}/boards/${boardId}/cards/${card.card_id}`)
@@ -145,20 +96,6 @@ const CardList = (props) => {
         alert('Unable to delete the card.');
       });
   };
-
-  // const deleteCard = (cardId) => {
-  //   axios
-  //     .delete(`${URL_PREFIX}/cards/${cardId}`)
-  //     .then(() => {
-  //       const newCards = cardData.filter((card) => card.id !== cardId);
-  //       setCardData(newCards);
-  //     })
-  //     .catch((error) => {
-  //       console.error('deleteCard error:', error);
-  //     });
-  // };
-
-  // console.log('inside CardList', cardData)
 
   return (
     <section >
