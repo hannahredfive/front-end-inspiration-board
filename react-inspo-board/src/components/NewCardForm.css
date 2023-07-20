@@ -1,11 +1,11 @@
-.cards__container {
+/* .cards__container {
     grid-template-columns: 2fr 1fr;
-}
+} */
 
-.new-card-form__form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2em;
-    width: 100%;
-    border: dotted;
+
+.new-card-form {
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    gap: 10%;
 }

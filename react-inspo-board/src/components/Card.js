@@ -5,20 +5,20 @@ import './Card.css';
 const Card = ({ card, likeCardCount, disLikeCardCount, deleteCard, boardId }) => {
     console.log('Card boardId', boardId);
     return (
-        <section class="cards__container">
+        <section class="cards-container">
             <div class="card-item">
             <p>{card.message}</p>
-            <div class="card-items__container">
+            <div class="card-icons-container">
                 <button onClick={() => likeCardCount(boardId, card)}>
                     + ❤️
-                    {/* {card.likes_count ? '❤️' : '🤍'} */}
+                    {/* {card.likes_count ? '+ ❤️' : '🖤'} */}
                 </button>
                 {card.likes_count}
                 <button onClick={() => disLikeCardCount(boardId, card)}>
-                    🤍 -
+                    🖤 -
                 </button>
                 <button onClick={() => deleteCard(boardId, card)}>
-                    🆇
+                    ❌
                 </button>
             </div>
             </div>

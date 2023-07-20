@@ -1,11 +1,21 @@
 .card-list-container {
     display: grid;
-    /* flex-direction: row; */
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-around;
-    /* background-color: bisque; */
+
 }
 .cardform {
-    display: flex;
-    align-items: flex-end;
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
 }
+
+  footer {
+    font-size: 14px;
+    text-align: center;
+    color: rgb(2, 87, 87);
+  }
+
+  p {
+    line-height: 5px;
+  }

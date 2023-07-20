@@ -22,17 +22,19 @@ const NewCardForm = ({ addCard, boardId }) => {
 
     return (
         <section>
-            <h3>Create New Post-it Note</h3>
-            <form onSubmit={handleFormSubmit}>
-                <label htmlFor="message">Message:</label>
-                <input
-                    name="message"
-                    type="text"
-                    value={cardFormData.message}
-                    onChange={handleMessageChange}
-                />
-                <button type="submit">Post</button>
-            </form>
+            <div className="new-card-form">
+                <h3>Create New Post-it Note</h3>
+                <form className='form-container' onSubmit={handleFormSubmit}>
+                    <label htmlFor='message'>Message:</label>
+                    <input className='input-field'
+                        name="message"
+                        type="text"
+                        value={cardFormData.message}
+                        onChange={handleMessageChange}
+                    />
+                    <input className='form-button' type="submit" value='Post'></input>
+                </form>
+            </div>
         </section>
     );
 };

@@ -1,20 +1,27 @@
-.cards__container {
+.cards-container {
     border: dotted;
     background-color:rgb(246, 246, 166);
+    box-shadow: 10px 10px 10px rgb(87, 150, 179);
 }
 
-.card-items__container {
-    grid-gap: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 2rem;
+.card-icons-container {
+    /* grid-gap: 10rem; */
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    margin: 1rem;
 }
 
 .card-item {
     align-items: center;
-    display: flex;
+    display: grid;
     flex-direction: column;
     justify-content: center;
     min-height: 200px;
+    min-width: 200px;
     padding: 2rem;
+}
+
+button {
+    background-color: transparent;
+    border: none;
 }

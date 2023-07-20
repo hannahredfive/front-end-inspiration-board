@@ -1,11 +1,17 @@
 html {
   /* background-color: skyblue; */
-  /* background-image: url('/assets/fluffybutt-inspo-board-background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh; */
+  /* background-image: url('/assets/fluffybutt-inspo-board-background.png'); */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* height: 100vh; */
   background: url('/assets/fluffybutt-inspo-board-background.png') no-repeat center fixed;
   background-size: cover;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
 
 .webpage-border {
@@ -67,7 +73,7 @@ html {
 .board-buttons {
   background-color: rgb(59, 194, 199);
   border: none;
-  padding: 10px;
+  padding: 9.5px;
   font-size: 14px;
   box-shadow: 5px 5px 5px rgb(87, 150, 179);
 }
@@ -81,7 +87,7 @@ html {
   border: none;
   font-size: 14px;
   padding-top: 5px;
-  padding-bottom: 8px;
+  padding-bottom: 7.5px;
   margin-right: 10px;
   box-shadow: 5px 5px 5px rgb(87, 150, 179);
 }
@@ -90,14 +96,14 @@ html {
   background-color: rgb(61, 174, 235);
 }
 
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -127,22 +133,6 @@ html {
   to {
     transform: rotate(360deg);
   }
-}
-
-footer {
-  position: absolute;
-  display: flex;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  /* padding: 0; */
-  color: rgb(2, 87, 87);
-  padding-bottom: 2%;
-  /* background-color: rgb(141, 141, 147); */
-}
-
-p {
-  line-height: 5px;
 }
 
 

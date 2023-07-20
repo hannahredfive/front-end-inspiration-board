@@ -136,7 +136,7 @@ function App() {
       </span>
       <main>
           {showHide && 
-            <section className='left'>
+            <section>
               <NewBoardForm 
                 showHide={showHide} 
                 createNewBoard={createNewBoard} 
@@ -156,9 +156,6 @@ function App() {
           /> 
         </section> */}
       </main>
-      <footer>
-        <p>Made with love by Team Fluffybutt, last updated July 2023. Copyright © 2023 Kathleen, Sel, Hannah and Linh. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

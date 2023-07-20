@@ -7,15 +7,19 @@ section {
     display: grid;
     grid-template-rows: auto;
     justify-content: center;
-    /* gap: 10% */
+    gap: 5%;
 }
 
-* {
-    font-family: 'Roboto', sans-serif;
+h3 {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(10, 131, 135);
+    font-size: 22px;
+    
 }
 
-.new-board-form-container {
-    /* background-color: bisque; */
+.form-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 2em;
@@ -24,16 +28,12 @@ section {
     align-items: center;
 }
 
-.input-field {
+input {
     width: 500px;
 }
 
-.add-new-board-button {
-    background-color: lemonchiffon;
-}
-
-.add-new-board-button {
-    margin-right: 10px;
+.form-button {
+    margin-top: 4%;
     background-color: rgb(88, 216, 249);
     border: none;
     padding: 10px;
@@ -41,6 +41,6 @@ section {
     /* box-shadow: 5px 5px 5px rgb(87, 150, 179); */
   }
   
-  .add-new-board-button:hover {
+  .form-button:hover {
     background-color: rgb(113, 190, 164);
   }

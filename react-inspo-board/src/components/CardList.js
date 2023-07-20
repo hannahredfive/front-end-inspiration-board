@@ -186,6 +186,10 @@ const CardList = (props) => {
           />
         ))}
       </div>
+      <footer>
+        <p>Made with love by Team Fluffybutt, last updated July 2023.</p>
+        <p>Copyright © 2023 Kathleen, Sel, Hannah,  and Linh. All rights reserved.</p>
+      </footer>
     </section>
   );
 };
