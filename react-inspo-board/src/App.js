@@ -118,7 +118,7 @@ function App() {
   return (
     <div className="webpage-border">
       <section className="title-container">
-        <h1 className="animated-title">{currentBoard.owner}'S INSPIRATION BOARD</h1>
+        <h1 className="animated-title">{currentBoard.owner}{currentBoard.owner ? "'S" : ''} INSPIRATION BOARD</h1>
       </section>
       <span className="board-container">
           <div className="board-list">
