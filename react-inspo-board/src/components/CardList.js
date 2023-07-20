@@ -99,29 +99,31 @@ const CardList = (props) => {
 
   return (
     <section >
-      <div className='cardform'>
-        <section>
-        {console.log('CardList JSX level', props.boardId)}
-        {!!props.boardId && 
-          <NewCardForm 
-            addCard={addCard}
-            boardId={props.boardId}
-          /> 
-        }
-        </section>
-      </div>
-      <div className='card-list-container'>
-        {console.log('Inside cardData', cardData)}
-        {cardData.map((card) => (
-          <Card
-            key={card.card_id}
-            card={card}
-            likeCardCount={likeCardCount}
-            disLikeCardCount={disLikeCardCount}
-            deleteCard={deleteCard}
-            boardId={props.boardId} 
-          />
-        ))}
+      <div className='content-container'>
+        <div className='cardform'>
+          <section>
+          {console.log('CardList JSX level', props.boardId)}
+          {!!props.boardId && 
+            <NewCardForm 
+              addCard={addCard}
+              boardId={props.boardId}
+            /> 
+          }
+          </section>
+        </div>
+        <div className='card-list-container'>
+          {console.log('Inside cardData', cardData)}
+          {cardData.map((card) => (
+            <Card
+              key={card.card_id}
+              card={card}
+              likeCardCount={likeCardCount}
+              disLikeCardCount={disLikeCardCount}
+              deleteCard={deleteCard}
+              boardId={props.boardId} 
+            />
+          ))}
+        </div>
       </div>
       <footer>
         <p>Made with love by Team Fluffybutt, last updated July 2023.</p>
